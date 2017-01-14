@@ -88,7 +88,7 @@ int main(void) {
 
 		if (bullet_flag==1)
 		{
-			if(x_bullet <230)
+			if(x_bullet <250)
 			{
 				if(tick1 == 1)
 				{
@@ -101,14 +101,11 @@ int main(void) {
 				bullet_flag=0;
 		}
 
-
 		tick = 0;
 		tick1 = 0;
 
 		bsp_draw();
 	}
-
-
 }
 
 

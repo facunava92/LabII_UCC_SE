@@ -1,9 +1,9 @@
 #ifndef _BSP_H
 #define _BSP_H
 
-#define X_Limit 150
+#define X_Limit 240
 #define Y_Init 	72
-#define X_Init	60
+#define X_Init	40
 
 
 typedef enum{
