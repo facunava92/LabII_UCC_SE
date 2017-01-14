@@ -93,7 +93,7 @@ int main(void) {
 				if(tick1 == 1)
 				{
 					x_bullet+=3;
-					VGA_DrawImageAlpha(&bullet, x_bullet, y_bullet, 0xFF);
+					VGA_DrawImageAlpha(&bullet, x_bullet, y_bullet, 0xFC);
 				}
 			}
 
@@ -119,7 +119,7 @@ void shoot(void)
 	{
 		case st_shoot_0:
 		{
-			VGA_DrawImageAlpha(&shoot1, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot1, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_1;
 		}
@@ -127,7 +127,7 @@ void shoot(void)
 
 		case st_shoot_1:
 		{
-			VGA_DrawImageAlpha(&shoot2, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot2, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_2;
 		}
@@ -135,7 +135,7 @@ void shoot(void)
 
 		case st_shoot_2:
 		{
-			VGA_DrawImageAlpha(&shoot3, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot3, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_3;
 		}
@@ -143,7 +143,7 @@ void shoot(void)
 
 		case st_shoot_3:
 		{
-			VGA_DrawImageAlpha(&shoot4, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot4, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_4;
 		}
@@ -151,7 +151,7 @@ void shoot(void)
 
 		case st_shoot_4:
 		{
-			VGA_DrawImageAlpha(&shoot5, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot5, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_5;
 		}
@@ -159,15 +159,20 @@ void shoot(void)
 
 		case st_shoot_5:
 		{
-			VGA_DrawImageAlpha(&shoot6, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot6, x, y, 0x35);
 			if (tick == 1)
+			{
+				bullet_flag = 1;
+				x_bullet = x+40;
+				y_bullet = y+24;
 				st_jump=st_shoot_6;
+			}
 		}
 		break;
 
 		case st_shoot_6:
 		{
-			VGA_DrawImageAlpha(&shoot7, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot7, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_7;
 		}
@@ -175,7 +180,7 @@ void shoot(void)
 
 		case st_shoot_7:
 		{
-			VGA_DrawImageAlpha(&shoot8, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot8, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_8;
 		}
@@ -183,7 +188,7 @@ void shoot(void)
 
 		case st_shoot_8:
 		{
-			VGA_DrawImageAlpha(&shoot9, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot9, x, y, 0x35);
 			if (tick == 1)
 				st_jump=st_shoot_9;
 		}
@@ -191,12 +196,9 @@ void shoot(void)
 
 		case st_shoot_9:
 		{
-			VGA_DrawImageAlpha(&shoot10, x, y, 0xFF);
+			VGA_DrawImageAlpha(&shoot10, x, y, 0x35);
 			if (tick == 1)
 			{
-				bullet_flag = 1;
-				x_bullet = x+30;
-				y_bullet = y+20;
 				st_jump=st_shoot_0;
 				main_states=st_standby_1;
 			}
